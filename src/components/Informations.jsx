@@ -14,9 +14,9 @@ function Informations() {
     return (
         <>
             {/* Section-informacions */}
-            <div className="grid grid-cols-1 md:grid-cols-2 place-items-center content-center py-10 px-6 md:px-28 h-auto bg-slate-50">
+            <div className="grid grid-cols-1 md:grid-cols-2 place-items-center content-center py-20 px-6 md:px-28 h-auto bg-slate-50">
                 <div className="text-center md:text-left">
-                    <h1 className="text-4xl md:text-7xl text-slate-900 font-bold mb-5">KIT SENSORIAL</h1>
+                    <h1 className="text-4xl md:text-7xl text-slate-800 font-bold mb-5">KIT SENSORIAL</h1>
                     <p className="text-sm md:text-base text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, ipsam harum. Debitis dolore sunt porro tenetur quasi blanditiis autem, voluptate minus ab, commodi necessitatibus eligendi laborum odit iste. Quidem, autem. Modi numquam aliquam dignissimos ex consequuntur enim quia voluptate consectetur, voluptatem saepe repellendus tempore perferendis velit minus totam obcaecati accusantium quam debitis quod, expedita itaque quibusdam est magni optio.</p>
                     <div className="pt-5" onClick={openModal}>
                         <button className="bg-green-600 opacity-100 hover:opacity-95 shadow-md text-white rounded-full px-7 py-2 text-sm md:text-lg font-medium text-center md:text-right">Vision and Mission</button>
