@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Ilustracion from "../assets/img/Ilustracion/visual3.png"
+import Backhome from "../assets/img/Background/Backhome5.png"
 function Informations() {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -14,7 +15,10 @@ function Informations() {
     return (
         <>
             {/* Section-informacions */}
-            <div className="grid grid-cols-1 md:grid-cols-2 place-items-center content-center py-20 px-6 md:px-28 h-auto bg-slate-50">
+            <div className={`grid grid-cols-1 md:grid-cols-2 place-items-center content-center py-20 px-6 md:px-28 h-auto `} style={{
+                backgroundImage: `url(${Backhome})`, backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+            }} >
                 <div className="text-center md:text-left">
                     <h1 className="text-4xl md:text-7xl text-slate-800 font-bold mb-5">KIT SENSORIAL</h1>
                     <p className="text-sm md:text-base text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, ipsam harum. Debitis dolore sunt porro tenetur quasi blanditiis autem, voluptate minus ab, commodi necessitatibus eligendi laborum odit iste. Quidem, autem. Modi numquam aliquam dignissimos ex consequuntur enim quia voluptate consectetur, voluptatem saepe repellendus tempore perferendis velit minus totam obcaecati accusantium quam debitis quod, expedita itaque quibusdam est magni optio.</p>
