@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Ilustracion from "../assets/img/Ilustracion/visual3.png"
-import Backhome from "../assets/img/Background/Backhome5.png"
+import Backhome from "../assets/img/Background/Backhome9.svg"
 function Informations() {
     const [isOpen, setIsOpen] = useState(false);
 

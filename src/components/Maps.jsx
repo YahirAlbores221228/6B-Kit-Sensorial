@@ -1,20 +1,16 @@
 import { useEffect, useRef } from "react";
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+
 
 function Maps() {
     const mapRef = useRef(null);
 
-    useEffect(() => {
-        Aos.init();
-    }, []);
 
     useEffect(() => {
         const google = window.google;
         const mapNode = mapRef.current;
         const map = new google.maps.Map(mapNode, {
             center: { lat: 16.622619667055645, lng: -93.09873752202292 },
-            zoom: 14
+            zoom: 15
         });
 
         const markersData = [
@@ -38,11 +34,8 @@ function Maps() {
 
     return (
         <>
-            <div className="h-auto grid place-items-center p-10">
-                <div>
-                    <h1 className='text-5xl font-bold text-center text-slate-800 mb-10'>GEOLOCATION</h1>
-                </div>
-                <div ref={mapRef} style={{ height: '500px' }} className="h-96 w-full" data-aos="zoom-in-up" data-aos-duration="2000">
+            <div className="h-auto p-2">
+                <div ref={mapRef} style={{ height: '400px' }} className="w-full">
                 </div>
             </div>
         </>

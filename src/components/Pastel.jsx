@@ -1,7 +1,7 @@
 import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import 'aos/dist/aos.css';
+
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -13,7 +13,7 @@ function Pastel() {
             legend: {
                 display: true,
                 labels: {
-                    color: 'white',
+                    color: 'black',
                 },
             },
         },
@@ -33,9 +33,9 @@ function Pastel() {
     };
 
     return (
-        <div className='h-auto w-96' data-aos="fade-right" data-aos-duration="3000">
-            <Pie style={{ width: '405px', height: '500px' }} data={data} options={options} />
-        </div>
+     
+            <Pie style={{ width: '400px', height: '400px' }} data={data} options={options} />
+   
     );
 }
 
