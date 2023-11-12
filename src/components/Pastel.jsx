@@ -11,7 +11,7 @@ function Pastel() {
         maintainAspectRatio: false,
         plugins: {
             legend: {
-                display: true,
+              
                 labels: {
                     color: 'black',
                 },
@@ -33,9 +33,9 @@ function Pastel() {
     };
 
     return (
-     
+        <>
             <Pie style={{ width: '400px', height: '400px' }} data={data} options={options} />
-   
+        </>
     );
 }
 

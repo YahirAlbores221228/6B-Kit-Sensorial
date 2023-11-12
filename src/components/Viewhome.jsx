@@ -6,7 +6,7 @@ function ViewHome() {
         <>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {/**Grafica */}
-                <div className="rounded-lg p-4 h-60 md:h-96 w-full shadow shadow-gray-400">
+                <div className="rounded-lg p-2 h-auto md:h-96 w-full shadow shadow-gray-400">
                     <Pastel />
                 </div>
                 {/**Numeros de contacto */}
@@ -30,6 +30,7 @@ function ViewHome() {
                 </div>
                 {/**Mapas geolocalizacion */}
                 <div className="rounded-lg w-full shadow md:col-span-2 shadow-gray-400">
+                    <h1 className="text-violet-700 text-lg font-medium mt-2 ml-2">Geolocations</h1>
                     <Maps />
                 </div>
             </div>
