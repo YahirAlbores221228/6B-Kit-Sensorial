@@ -33,12 +33,11 @@ function Maps() {
     });
 
     return (
-        <>
-            <div className="h-auto p-2">
-                <div ref={mapRef} style={{ height: '400px' }} className="w-full">
-                </div>
+        <div className="h-auto p-2">
+            <div ref={mapRef} style={{ height: '400px' }} className="w-full">
             </div>
-        </>
+        </div>
+
     );
 }
 

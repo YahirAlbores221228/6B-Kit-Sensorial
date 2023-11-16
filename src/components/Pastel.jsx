@@ -1,8 +1,6 @@
 import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-
-
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function Pastel() {
@@ -11,7 +9,6 @@ function Pastel() {
         maintainAspectRatio: false,
         plugins: {
             legend: {
-              
                 labels: {
                     color: 'black',
                 },
@@ -33,9 +30,7 @@ function Pastel() {
     };
 
     return (
-        <>
-            <Pie style={{ width: '400px', height: '400px' }} data={data} options={options} />
-        </>
+        <Pie style={{ width: '400px', height: '400px' }} data={data} options={options} />
     );
 }
 
