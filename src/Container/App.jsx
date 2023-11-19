@@ -3,19 +3,21 @@ import { useState } from "react";
 import Login from "../Pages/Login";
 import Home from "../Pages/Home";
 import Register from '../Pages/Register';
-import UsersimgContext from "../Context/UsersimgContext"
+import GraphicContext from "../Context/GraphicContext"
+
 function App() {
-  const [usersimg, setUsersimg] = useState("");
+  const [graphic, setGraphic] = useState("");
+  
   return (
     <>
       <BrowserRouter>
-        <UsersimgContext.Provider value={{ usersimg, setUsersimg }}>
+        <GraphicContext.Provider value={{ graphic, setGraphic }}>
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/Home" element={<Home />} />
             <Route path="/Register" element={<Register />} />
           </Routes>
-        </UsersimgContext.Provider>
+        </GraphicContext.Provider>
       </BrowserRouter>
     </>
   )

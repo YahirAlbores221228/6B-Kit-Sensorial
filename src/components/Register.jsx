@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import backgroundregister from "../assets/img/Background/Visualizacion3.jpg"
+import backgroundregister from "../assets/img/Background/Visualizacion2.png"
 function Register() {
 
     const formDataU = useRef();

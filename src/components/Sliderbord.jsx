@@ -1,13 +1,20 @@
 import Logo from "../assets/img/Logos/Blubbysoft.png";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Home from "../assets/img/Icons/Home.svg";
 import Sopport from "../assets/img/Icons/Sopport.svg";
 import Notification from "../assets/img/Icons/Notificationn.png";
 import Avatar from "../assets/img/Icons/Avatar2.png";
 
-function SliderBoard({ onSidebarItemClick }) {
+function SliderBoard({ onSidebarItemClick, user }) {
+
     const [selectedProfileImage, setSelectedProfileImage] = useState(null);
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        if (!user) {
+            setSelectedProfileImage();
+        }
+    }, []);
 
     const handleProfileImageChange = (e) => {
         const file = e.target.files[0];
@@ -46,7 +53,7 @@ function SliderBoard({ onSidebarItemClick }) {
             <nav className={`lg:w-80 ${isOpen ? "w-80 fixed z-10" : "hidden"} bg-white lg:grid lg:static grid place-content-between grid-cols-1 w-80 min-h-screen p-10 rounded-r-lg text-center shadow-lg transition-all duration-300`}>
                 <div className="grid place-items-center gap-14">
                     <div>
-                        <img className="h-full object-cover w-24" src={Logo} alt="" />
+                        <img className="h-full object-cover w-20" src={Logo} alt="" />
                     </div>
                     <div className="grid place-items-start gap-8 text-violet-700 font-medium text-lg">
                         <button className="hover:transform hover:scale-105 hover:text-black rounded-full" onClick={() => onSidebarItemClick('Home')}>

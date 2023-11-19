@@ -1,10 +1,28 @@
+import React, { useEffect, useState } from "react";
+import io from "socket.io-client";
 import Pastel from "./Pastel"
 import Maps from "./Maps"
+
+const socket = io("http://204.236.234.67:4000/");
+
 function ViewHome() {
+    const [gpsDatas, setGpsDatas] = useState([]);
+    useEffect(() => {
+        socket.on("message", data => {
+
+            let coordinates = {
+                latitude: data.Latitude,
+                longitude: data.Longitude
+            }
+            setGpsDatas(coordinates);
+            console.log(coordinates);
+        });
+    }, []);
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <div className="rounded-lg p-2 h-auto md:h-96 w-full shadow shadow-gray-400">  
-                <Pastel />
+            <div className="rounded-lg p-2 h-auto md:h-96 w-full shadow shadow-gray-400">
+                <Pastel distance />
             </div>
             <div className="rounded-lg shadow shadow-gray-400 p-4 md:h-auto">
                 <div className="grid gap-5">
@@ -26,7 +44,7 @@ function ViewHome() {
             </div>
             <div className="rounded-lg w-full shadow md:col-span-2 shadow-gray-400">
                 <h1 className="text-violet-700 text-lg font-medium mt-2 ml-2">Geolocalizacion</h1>
-                <Maps />
+                <Maps x1={gpsDatas.latitude} y1={gpsDatas.longitude} />
             </div>
         </div>
     );
