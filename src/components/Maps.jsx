@@ -4,11 +4,18 @@ import GraphicContext from "../Context/GraphicContext";
 function Maps({ x1, y1, discapacityName }) {
 
     const mapRef = useRef(null);
-    
+    // let x1 = 16.747898514696185;
+    // let y1 = -93.10739417725031;
+
     const { setGraphic } = useContext(GraphicContext);
     const x2 = [16.63353723836228, 16.631265369278807, 16.619299023949957, 16.61506334829629, 16.626433013101686, 16.62230029981325, 16.621694390704494];
     const y2 = [-93.09581925228562, -93.09732128933395, -93.0980723531495, -93.09051925256365, -93.1011455904523, -93.10490068307315, -93.0996172739899];
     const titles = ["Hotel Ambar Suchiapas", "Gasolinera", "Bodega Aurrera", "Universidad Politecnica de Chiapas", "Mercado Publico 18 de Marzo", "Presidencia Municipal", "Oxxo"];
+
+    // Función auxiliar para convertir grados a radianes
+    const toRadians = (grados) => {
+        return grados * (Math.PI / 180);
+    };
 
     // Función para calcular la distancia haversine en kilómetros
     const calcularDistanciaHaversine = (lat1, lon1, lat2, lon2) => {
@@ -23,18 +30,19 @@ function Maps({ x1, y1, discapacityName }) {
         return distancia;
     };
 
-    // Función auxiliar para convertir grados a radianes
-    const toRadians = (grados) => {
-        return grados * (Math.PI / 180);
-    };
-
     let distance = () => {
-        let distanceCalculated = [];
+        // let distanceCalculated = [];
+        let distanceCalculated = {
+            distance: [],
+            label: []
+        }
+
         if (x1 && y1) {
             for (let i = 0; i < x2.length && y2.length; i++) {
-                //distanceCalculated[i] = Math.sqrt(Math.pow(x2[i] - x1, 2) + Math.pow(y2[i] - y1, 2));
                 // Calcular la distancia en kilómetros
-                distanceCalculated = calcularDistanciaHaversine(x1, y1, x2[i], y2[i]);
+                // distanceCalculated[i] = calcularDistanciaHaversine(x1, y1, x2[i], y2[i]);
+                distanceCalculated.distance[i] = calcularDistanciaHaversine(x1, y1, x2[i], y2[i]);
+                distanceCalculated.label[i] = titles[i];
                 setGraphic(distanceCalculated);
             }
 

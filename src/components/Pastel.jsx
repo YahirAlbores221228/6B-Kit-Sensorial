@@ -6,10 +6,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 function Pastel() {
     const { graphic } = useContext(GraphicContext);
-    useEffect(() => {
-        console.log("Hola soy las distancias", graphic);
-    }, [graphic]);
-
+    
     const options = {
         responsive: true,
         maintainAspectRatio: false,
@@ -23,11 +20,11 @@ function Pastel() {
     };
 
     const data = {
-        labels: ['Oxxo', 'Gasolinera', 'Presidencia Municipal', 'Parque Central', 'Bodega Aurrera', 'Mercado Publico 18 de Marzo', 'Hotel Ambar Suchiapa'],
+        labels: graphic.label,
         datasets: [
             {
                 label: 'Km',
-                data: graphic,
+                data: graphic.distance,
                 backgroundColor: ['#10b981', '#06b6d4', '#a855f7', '#f43f5e', '#FFA500', ' #FFFF00', '#00FF7F'],
                 borderColor: ['#10b981', '#06b6d4', '#a855f7', '#f43f5e', '#FFA500', ' #FFFF00', '#00FF7F'],
                 borderWidth: 1,
