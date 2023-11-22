@@ -32,9 +32,9 @@ function SliderBoard({ onSidebarItemClick, user }) {
     };
 
     const uploadImageToAPI = (imageFile) => {
-        const apiUrl = 'http://44.214.168.115:3000/users/updateimg';
+        const apiUrl = 'https://apiweb.blubbysoft.site/users/updateimg';
         const formData = new FormData();
-        formData.append('image', imageFile);
+        formData.append('file', imageFile);
         formData.append('email', "ejemplo@ejemplo.com")
         fetch(apiUrl, {
             method: 'POST',

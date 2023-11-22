@@ -7,26 +7,26 @@ function Register() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData(formDataU.current);
-        fetch("http://44.214.168.115:3000/users/create", {
+        fetch("https://apiweb.blubbysoft.site/users/create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 email: formData.get("email"),
-                id_region: formData.get("1"),
+                id_region: 1,
                 name_of_responsible: formData.get("name_of_responsible"),
                 phone: formData.get("phone"),
                 mobile_phone: formData.get("mobile_phone"),
-                name_of_desability: formData.get("name_of_desability"),
+                name_of_disability: formData.get("name_of_disability"),
                 relationship: formData.get("relationship"),
                 password: formData.get("password"),
-                Image: formData.get(0),
+                image: 0,
             }),
         })
             .then((response) => response.json())
             .then((data) => {
-                alert(data)
+               console.log(data)
             });
 
     };
@@ -60,7 +60,7 @@ function Register() {
                     <div className="grid mb-9 gap-5">
                         <div>
                             <label className="text-sm font-medium text-gray-500">Nombre de la invalidez</label>
-                            <input type="text" placeholder="Nombre de la invalidez" name="name_of_desability" required className="w-full rounded-md py-2 pl-2 pr-2 ring-1 ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:outline-none" />
+                            <input type="text" placeholder="Nombre de la invalidez" name="name_of_disability" required className="w-full rounded-md py-2 pl-2 pr-2 ring-1 ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:outline-none" />
                         </div>
                         <div>
                             <label className="text-sm font-medium text-gray-500">Relacion</label>
